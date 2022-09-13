@@ -24,3 +24,15 @@ def calculate {
   }
   return [days, months, years]
 }
+
+age = calculate()
+
+def createIndex {
+  for i in range(0, 2){
+    if age[i] != 1:
+      index[i] = i + 2
+    else:
+      index[i] = i
+  }
+  return index
+}
