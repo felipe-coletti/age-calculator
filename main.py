@@ -27,12 +27,18 @@ def calculate {
 
 age = calculate()
 
+words = ["dia", "mês", "ano", "dias", "meses", "anos"]
+
 def createIndex {
   for i in range(0, 2){
     if age[i] != 1:
-      index[i] = i + 2
+      numbers[i] = i + 2
     else:
-      index[i] = i
+      numbers[i] = i
   }
-  return index
+  return numbers
 }
+
+index = createIndex()
+
+print()
