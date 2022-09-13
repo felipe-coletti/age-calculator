@@ -41,4 +41,13 @@ def createIndex {
 
 index = createIndex()
 
-print()
+print("{} {}, {} {} e {} {}".format(
+  age[2], words[index[2]],
+  age[1], words[index[1]],
+  age[0], words[index[0]],
+))
+
+if age[2] >= 18:
+  print("")
+else:
+  print("Você não tem idade suficiente para acessa esta página.")
