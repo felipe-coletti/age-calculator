@@ -2,12 +2,13 @@ from datetime import *
 
 print("Data de nascimento")
 
-birthday = int(input("Dia:"))
-birthmonth = int(input("Mês:"))
-birthyear = int(input("Ano:"))
+day = int(input("Dia: "))
+month = int(input("Mês: "))
+year = int(input("Ano: "))
 
 birthday = [day, month, year]
-day date.today()
+
+date = date.today()
 
 def calculate {
   for i in range(2, 0) {
