@@ -2,21 +2,25 @@ from datetime import *
 
 print("Data de nascimento")
 
-birthday = int(input("Dia: "))
-birthmonth = int(input("Mês: "))
-birthyear = int(input("Ano: "))
+day = int(input("Dia: "))
+month = int(input("Mês: "))
+year = int(input("Ano: "))
 
-birthdate = [birthday, birthmonth, birthyear]
+birthday = [day, month, year]
 
 date = date.today()
 
 def calculate {
-  year = date[2] - 1 - birthdate[2]
-  month = date[1] - 1 + 12 - birthdate[1]
-  day = date[0] - 1 + 31 - birthday[0]
-  while day > 31 {
-    month += 1
-    day -= 31
+  years = date[2] - 1 - birthday[2]
+  months = date[1] - 1 + 12 - birthday[1]
+  days = date[0] - 1 + 31 - birthday[0]
+  while days > 31 {
+    months += 1
+    days -= 31
   }
-  return age
+  while months > 12 {
+    years += 1
+    months -= 12
+  }
+  return [days, months, years]
 }
