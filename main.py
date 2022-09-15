@@ -1,13 +1,13 @@
 from datetime import *
 
-# solicitação da data de nascimento do usuário
+# solicite a data de nascimento do usuário
 print("Data de nascimento")
 
 day = int(input("Dia: "))
 month = int(input("Mês: "))
 year = int(input("Ano: "))
 
-# máscara para agrupamento e organização dos dados
+# crie uma máscara para os dados
 birthday = [day, month, year]
 
 date = date.today()
