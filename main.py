@@ -50,4 +50,4 @@ print("{} {}, {} {} e {} {}".format(
 if age[2] >= 18:
   print("Ok, divirta-se.")
 else:
-  print("Você não tem idade suficiente para acessar esta página..")
+  print("Você não tem idade suficiente para acessar esta página.")
