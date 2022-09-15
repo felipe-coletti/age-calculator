@@ -1,3 +1,4 @@
+# importe uma biblioteca que forneça data e hora
 from datetime import *
 
 # solicite a data de nascimento do usuário
