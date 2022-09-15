@@ -15,8 +15,8 @@ date = date.today()
 def calculate {
   '''
   Calcule ano, mês e dia (nessa ordem) para não se
-  preocupar com o valor de um unidade maior quando
-  for calcular a unidade menor.
+  preocupar com o valor de uma unidade maior quando
+  for calcular uma unidade menor.
   '''
   years = date[2] - 1 - birthday[2]
   months = date[1] - 1 + 12 - birthday[1]
