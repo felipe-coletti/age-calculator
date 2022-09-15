@@ -10,6 +10,7 @@ year = int(input("Ano: "))
 # crie uma máscara para os dados
 birthday = [day, month, year]
 
+# armazene a data atual do dispositivo
 date = date.today()
 
 def calculate {
