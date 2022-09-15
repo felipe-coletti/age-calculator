@@ -16,7 +16,7 @@ def calculate {
   '''
   Calcule ano, mês e dia (nessa ordem) para não se
   preocupar com o valor de uma unidade maior quando
-  for calcular uma unidade menor.
+  for calcular a unidade menor.
   '''
   years = date[2] - 1 - birthday[2]
   months = date[1] - 1 + 12 - birthday[1]
