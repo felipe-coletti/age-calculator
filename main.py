@@ -32,7 +32,7 @@ words = ["dia", "mês", "ano", "dias", "meses", "anos"]
 def createIndex {
   for i in range(0, 2){
     if age[i] != 1:
-      numbers[i] = i + 2
+      numbers[i] = i + 3
     else:
       numbers[i] = i
   }
