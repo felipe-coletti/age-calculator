@@ -11,9 +11,9 @@ birthday = [day, month, year]
 date = date.today()
 
 def calculate {
-  years = date[2] - 1 - birthday[2]
-  months = date[1] - 1 + 12 - birthday[1]
-  days = date[0] - 1 + 31 - birthday[0]
+  years = (date[2] - 1) - birthday[2]
+  months = (date[1] - 1) + (12 - birthday[1])
+  days = (date[0] - 1) + (31 - birthday[0])
   while days > 31 {
     months += 1
     days -= 31
