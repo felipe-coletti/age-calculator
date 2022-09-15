@@ -1,19 +1,27 @@
 from datetime import *
 
+# solicitação da data de nascimento do usuário
 print("Data de nascimento")
 
 day = int(input("Dia: "))
 month = int(input("Mês: "))
 year = int(input("Ano: "))
 
+# máscara para agrupamento e organização dos dados
 birthday = [day, month, year]
 
 date = date.today()
 
 def calculate {
-  years = (date[2] - 1) - birthday[2]
-  months = (date[1] - 1) + (12 - birthday[1])
-  days = (date[0] - 1) + (31 - birthday[0])
+  '''
+  Calcular as unidades maiores primeiro para não se
+  preocupar com o valor delas quando for calcular as
+  unidades menores e subtrair 1 de cada valor porque
+  o dia, mês e ano atuais ainda não acabaram.
+  '''
+  years = date[2] - 1 - birthday[2]
+  months = date[1] - 1 + 12 - birthday[1]
+  days = date[0] - 1 + 31 - birthday[0]
   while days > 31 {
     months += 1
     days -= 31
