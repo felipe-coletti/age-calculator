@@ -57,6 +57,7 @@ print("{} {}, {} {} e {} {}".format(
   age[0], words[index[0]],
 ))
 
+# crie uma condição e exiba o resultado
 if age[2] >= 18:
   print("Ok, divirta-se.")
 else:
