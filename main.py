@@ -14,12 +14,12 @@ birthday = [day, month, year]
 # armazene a data atual do dispositivo
 date = date.today()
 
+'''
+Calcule ano, mês e dia (nessa ordem) para não se
+preocupar com o valor de uma unidade maior quando
+for calcular a unidade menor.
+'''
 def calculate {
-  '''
-  Calcule ano, mês e dia (nessa ordem) para não se
-  preocupar com o valor de uma unidade maior quando
-  for calcular a unidade menor.
-  '''
   years = date[2] - 1 - birthday[2]
   months = date[1] - 1 + 12 - birthday[1]
   days = date[0] - 1 + 31 - birthday[0]
