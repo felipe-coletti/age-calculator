@@ -30,11 +30,11 @@ def calculate {
     months -= 12
   }
   
-  # crie uma máscara para os dados de saída
+  # crie uma máscara para os dados tratados
   return [days, months, years]
 }
 
-# armazene os dados de saída
+# armazene os dados tratados
 age = calculate()
 
 words = ["dia", "mês", "ano", "dias", "meses", "anos"]
@@ -57,7 +57,7 @@ print("{} {}, {} {} e {} {}".format(
   age[0], words[index[0]],
 ))
 
-# crie uma condição e exiba o resultado
+# crie uma condição e exiba a saída
 if age[2] >= 18:
   print("Ok, divirta-se.")
 else:
