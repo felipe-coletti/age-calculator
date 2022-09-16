@@ -14,6 +14,7 @@ birthday = [day, month, year]
 # armazene a data atual do dispositivo
 date = date.today()
 
+# trate os dados
 def calculate {
   # calcule do maior para o menor e subtraia 1 da data atual
   years = date[2] - 1 - birthday[2]
@@ -37,6 +38,7 @@ def calculate {
 # armazene os dados tratados
 age = calculate()
 
+# trate os dados
 words = ["dia", "mês", "ano", "dias", "meses", "anos"]
 
 def createIndex {
@@ -49,15 +51,17 @@ def createIndex {
   return numbers
 }
 
+# armazene os dados tratados
 index = createIndex()
 
+# exiba o resultado do tratamento dos dados
 print("{} {}, {} {} e {} {}".format(
   age[2], words[index[2]],
   age[1], words[index[1]],
   age[0], words[index[0]],
 ))
 
-# crie uma condição e exiba a saída
+# você pode criar saídas diferentes para resultados diferentes
 if age[2] >= 18:
   print("Ok, divirta-se.")
 else:
