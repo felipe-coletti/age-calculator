@@ -8,21 +8,19 @@ day = int(input("Dia: "))
 month = int(input("Mês: "))
 year = int(input("Ano: "))
 
-# crie uma máscara para os dados
+# crie uma máscara para os dados de entrada
 birthday = [day, month, year]
 
 # armazene a data atual do dispositivo
 date = date.today()
 
-'''
-Calcule ano, mês e dia (nessa ordem) para não se
-preocupar com o valor de uma unidade maior quando
-for calcular a unidade menor.
-'''
 def calculate {
+  # calcule do maior para o menor e subtraia 1 da data atual
   years = date[2] - 1 - birthday[2]
   months = date[1] - 1 + 12 - birthday[1]
   days = date[0] - 1 + 31 - birthday[0]
+  
+  # corrija os valores em excesso
   while days > 31 {
     months += 1
     days -= 31
@@ -31,9 +29,12 @@ def calculate {
     years += 1
     months -= 12
   }
+  
+  # crie uma máscara para os dados de saída
   return [days, months, years]
 }
 
+# armazene os dados de saída
 age = calculate()
 
 words = ["dia", "mês", "ano", "dias", "meses", "anos"]
