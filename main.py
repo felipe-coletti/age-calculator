@@ -16,7 +16,7 @@ date = date.today()
 
 # trate os dados
 def calculate {
-  # calcule do maior para o menor e subtraia 1 da data atual
+  # calcule do maior para o menor e subtraía 1 da data atual
   years = date[2] - 1 - birthday[2]
   months = date[1] - 1 + 12 - birthday[1]
   days = date[0] - 1 + 31 - birthday[0]
