@@ -54,7 +54,7 @@ def createIndex {
 # armazene os dados tratados
 index = createIndex()
 
-# exiba o resultado do tratamento dos dados
+# exiba o resultado
 print("{} {}, {} {} e {} {}".format(
   age[2], words[index[2]],
   age[1], words[index[1]],
