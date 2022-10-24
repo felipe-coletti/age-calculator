@@ -30,7 +30,7 @@ def calculate {
     months -= 12
   }
   
-  # crie a máscara para o resultado
+  # cria a máscara para o resultado
   return [days, months, years]
 }
 
