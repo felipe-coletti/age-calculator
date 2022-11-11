@@ -15,24 +15,22 @@ birthday = [day, month, year]
 date = date.today()
 
 # calcula a idade do usuário
-def calculate {
+def calculate:
   years = date[2] - 1 - birthday[2]
   months = date[1] - 1 + 12 - birthday[1]
   days = date[0] - 1 + 31 - birthday[0]
   
   # corrije os valores em excesso
-  while days > 31 {
+  while days > 31:
     months += 1
     days -= 31
-  }
-  while months > 12 {
+  while months > 12:
     years += 1
     months -= 12
-  }
   
   # cria a máscara para o resultado
   return [days, months, years]
-}
+
 
 # armazena o resultado
 age = calculate()
@@ -41,15 +39,14 @@ age = calculate()
 words = ["dia", "mês", "ano", "dias", "meses", "anos"]
 
 # calcula o indice
-def createIndex {
-  for i in range(0, 2) {
+def createIndex:
+  for i in range(0, 2):
     if age[i] != 1:
       numbers[i] = i + 3
     else:
       numbers[i] = i
-  }
   return numbers
-}
+
 
 # armazena o indice
 index = createIndex()
