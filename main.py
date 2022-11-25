@@ -1,10 +1,10 @@
 from datetime import *
 
-print("Data de nascimento")
+print('Data de nascimento')
 
-day = int(input("Dia: "))
-month = int(input("Mês: "))
-year = int(input("Ano: "))
+day = int(input('Dia: '))
+month = int(input('Mês: '))
+year = int(input('Ano: '))
 
 birthday = [day, month, year]
 
@@ -28,7 +28,7 @@ def calculate:
 
 age = calculate()
 
-words = ["dia", "mês", "ano", "dias", "meses", "anos"]
+words = ['dia', 'mês', 'ano', 'dias', 'meses', 'anos']
 
 # calcula o indice
 def createIndex:
@@ -42,13 +42,13 @@ def createIndex:
 
 index = createIndex()
 
-print("{} {}, {} {} e {} {}".format(
+print('{} {}, {} {} e {} {}'.format(
   age[2], words[index[2]],
   age[1], words[index[1]],
   age[0], words[index[0]],
 ))
 
 if age[2] >= 18:
-  print("Ok, divirta-se.")
+  print('Ok, divirta-se.')
 else:
-  print("Você não tem idade suficiente para acessar esta página.")
+  print('Você não tem idade o suficiente para acessar esta página.')
