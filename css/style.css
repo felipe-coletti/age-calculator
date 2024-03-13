@@ -1,0 +1,114 @@
+:root {
+    --primary-text-color: #000;
+    --secondary-text-color: #585858;
+    --highlight-color: #0072e3;
+    --border-color: #ccc;
+    --shadow-color: #d9d9d9;
+    --primary-background-color: #fff;
+    --secondary-background-color: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    align-items: center;
+    background-color: var(--secondary-background-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+#container {
+    background-color: var(--primary-background-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px 0 var(--shadow-color);
+    gap: 1.5rem;
+    max-width: 24rem;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+#primary-title {
+    font-size: 1.5rem;
+}
+
+#content-area {
+    gap: 1rem;
+}
+
+#input-field {
+    gap: 0.5rem;
+}
+
+#container, #content-area, #input-field {
+    display: flex;
+    flex-direction: column;
+}
+
+#label {
+    font-size: 1rem;
+}
+
+#input {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    outline-color: var(--highlight-color);
+}
+
+.checkbox-field {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#button {
+    background-color: var(--highlight-color);
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--primary-background-color);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#input, #button {
+    font-size: 0.875rem;
+    padding: 0.75rem;
+}
+
+#result-area {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#secondary-title {
+    font-size: 1.25rem;
+}
+
+#primary-title, #label, #input, #secondary-title {
+    color: var(--primary-text-color);
+}
+
+#result {
+    color: var(--secondary-text-color);
+}
+
+@media screen and (max-width: 480px) {
+    main {
+        align-items: unset;
+        background-color: var(--primary-background-color);
+        padding: 0;
+    }
+  
+    #container {
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
