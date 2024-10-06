@@ -1,19 +1,15 @@
-const calculateDateDifference = (firstDate, secondDate) => {
-    firstDate = firstDate.split("-")
+const calculateDateDifference = (start, end) => {
+    let startYear = start.getFullYear()
+    let startMonth = start.getMonth() + 1
+    let startDay = start.getDate()
 
-    firstYear = parseInt(firstDate[0])
-    firstMonth = parseInt(firstDate[1])
-    firstDay = parseInt(firstDate[2])
-    
-    secondDate = secondDate.split("-")
+    let endYear = end.getFullYear()
+    let endMonth = end.getMonth() + 1
+    let endDay = end.getDate()
 
-    secondYear = parseInt(secondDate[0])
-    secondMonth = parseInt(secondDate[1])
-    secondDay = parseInt(secondDate[2])
-
-    years = secondYear - 1 - firstYear
-    months = secondMonth - 1 + 12 - firstMonth
-    days = secondDay + 31 - firstDay
+    let years = endYear - 1 - startYear
+    let months = endMonth - 1 + 12 - startMonth
+    let days = endDay - 1 + 31 - startDay
   
     if (days >= 31) {
         months++
@@ -24,36 +20,28 @@ const calculateDateDifference = (firstDate, secondDate) => {
         months -= 12
     }
 
-    return years.toString() + "-" + months.toString() + "-" + days.toString()
+    return `${years}-${months}-${days}`
 }
 
 const calculateAge = (birthDate) => {
-    currentDate = new Date()
-
-    currentYear = currentDate.getFullYear()
-    currentMonth = currentDate.getMonth() + 1
-    currentDay = currentDate.getDate()
-    
-    currentDate = currentYear.toString() + "-" + currentMonth.toString() + "-" + currentDay.toString()
+    let currentDate = new Date
 
     return calculateDateDifference(birthDate, currentDate)
 }
 
 const getAge = () => {
-    splitBirthDate = document.getElementById("input").value.split("-")
+    let dateInput = document.getElementById("input")
+    
+    let birthDate = new Date(`${dateInput.value}T00:00:00.000`)
 
-    birthYear = splitBirthDate[0]
-    birthMonth = splitBirthDate[1]
-    birthDay = splitBirthDate[2]
+    let age = calculateAge(birthDate)
 
-    if (!isNaN(birthYear) && !isNaN(birthMonth) && !isNaN(birthDay)) {
-        splitAge = calculateAge(document.getElementById("input").value).split("-")
+    let yearsOld = age.split("-")[0]
+    let monthsOld = age.split("-")[1]
+    let daysOld = age.split("-")[2]
 
-        yearsOld = splitAge[0]
-        monthsOld = splitAge[1]
-        daysOld = splitAge[2]
-
-        document.getElementById("result").innerHTML = yearsOld + (yearsOld != 1 ? " anos, " : "ano, ") + monthsOld + (monthsOld != 1 ? " meses e " : " mês e ") + daysOld + (daysOld != 1 ? " dias." : " dia.")
+    if (!isNaN(yearsOld) && !isNaN(monthsOld) && !isNaN(daysOld)) {
+        document.getElementById("result").innerHTML = `${yearsOld} ${yearsOld != 1 ? " anos, " : "ano, "} ${monthsOld} ${monthsOld != 1 ? " meses e " : " mês e "} ${daysOld} ${daysOld != 1 ? " dias." : " dia."}`
         document.getElementById("result-area").style.display = "flex";
     } else {
         document.getElementById("result-area").style.display = "none";
