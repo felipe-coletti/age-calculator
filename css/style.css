@@ -15,7 +15,7 @@
     font-family: sans-serif;
 }
 
-main {
+#main {
     align-items: center;
     background-color: var(--color-secondary-background);
     display: flex;

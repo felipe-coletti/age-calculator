@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de idade</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
-</head>
-<body>
-    <main>
-        <div id="container">
-            <h1 id="primary-title">Calculadora de idade</h1>
-            <div id="content-area">
-                <div id="input-field">
-                    <label id="label" for="input">Data de nascimento</label>
-                    <input id="input" type="date">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculadora de idade</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <main id="main">
+            <div id="container">
+                <h1 id="primary-title">Calculadora de idade</h1>
+                <div id="content-area">
+                    <div id="input-field">
+                        <label id="label" for="input">Data de nascimento</label>
+                        <input id="input" type="date" />
+                    </div>
+                    <button id="button" onclick="getAge()">Calcular</button>
                 </div>
-                <button id="button" onclick="getAge()">Calcular</button>
+                <div id="result-area">
+                    <h2 id="secondary-title">Resultado</h2>
+                    <p id="result"></p>
+                </div>
             </div>
-            <div id="result-area">
-                <h2 id="secondary-title">Resultado</h2>
-                <p id="result"></p>
-            </div>
-        </div>
-    </main>
-</body>
+        </main>
+    </body>
 </html>
