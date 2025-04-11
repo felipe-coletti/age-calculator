@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
 }
 
 main {
@@ -46,7 +46,9 @@ main {
     gap: 0.5rem;
 }
 
-#container, #content-area, #input-field {
+#container,
+#content-area,
+#input-field {
     display: flex;
     flex-direction: column;
 }
@@ -76,7 +78,8 @@ main {
     font-weight: bold;
 }
 
-#input, #button {
+#input,
+#button {
     font-size: 0.875rem;
     padding: 0.75rem;
 }
@@ -91,7 +94,10 @@ main {
     font-size: 1.25rem;
 }
 
-#primary-title, #label, #input, #secondary-title {
+#primary-title,
+#label,
+#input,
+#secondary-title {
     color: var(--primary-text-color);
 }
 
@@ -105,7 +111,7 @@ main {
         background-color: var(--primary-background-color);
         padding: 0;
     }
-  
+
     #container {
         background-color: transparent;
         border-radius: 0;
