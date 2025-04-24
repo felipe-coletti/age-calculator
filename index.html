@@ -6,19 +6,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Calculadora de idade</title>
         <link rel="stylesheet" href="css/style.css" />
-        <script src="js/script.js"></script>
+        <script src="js/script.js" defer></script>
     </head>
     <body>
         <main id="main">
             <div id="container">
                 <h1 id="primary-title">Calculadora de idade</h1>
-                <div id="content-area">
-                    <div id="input-field">
-                        <label id="label" for="input">Data de nascimento</label>
+                <form id="form">
+                    <label id="label">
+                        Data de nascimento
                         <input id="input" type="date" />
-                    </div>
-                    <button id="button" onclick="getAge()">Calcular</button>
-                </div>
+                    </label>
+                    <button type="submit" id="button">Calcular</button>
+                </form>
                 <div id="result-area">
                     <h2 id="secondary-title">Resultado</h2>
                     <p id="result"></p>

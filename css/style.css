@@ -38,23 +38,20 @@
     font-size: 1.5rem;
 }
 
-#content-area {
+#form {
     gap: 1rem;
-}
-
-#input-field {
-    gap: 0.5rem;
-}
-
-#container,
-#content-area,
-#input-field {
-    display: flex;
-    flex-direction: column;
 }
 
 #label {
     font-size: 1rem;
+    gap: 0.5rem;
+}
+
+#container,
+#form,
+#label {
+    display: flex;
+    flex-direction: column;
 }
 
 #input {
@@ -62,11 +59,6 @@
     border: 1px solid var(--color-border);
     border-radius: 0.25rem;
     outline-color: var(--color-highlight);
-}
-
-.checkbox-field {
-    display: flex;
-    gap: 0.5rem;
 }
 
 #button {

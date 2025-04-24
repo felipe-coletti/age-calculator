@@ -1,49 +1,66 @@
+const form = document.getElementById('form')
+const input = document.getElementById('input')
+
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
+}
+
+function daysInMonth(month, year) {
+    const daysPerMonth = [31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    return daysPerMonth[month - 1]
+}
+
 const calculateDateDifference = (start, end) => {
-    let startYear = start.getFullYear()
-    let startMonth = start.getMonth() + 1
-    let startDay = start.getDate()
+    let [firstYears, firstMonths, firstDays] = start.split('-').map(Number)
+    let [secondYears, secondMonths, secondDays] = end.split('-').map(Number)
 
-    let endYear = end.getFullYear()
-    let endMonth = end.getMonth() + 1
-    let endDay = end.getDate()
-
-    let years = endYear - 1 - startYear
-    let months = endMonth - 1 + 12 - startMonth
-    let days = endDay - 1 + 31 - startDay
-  
-    if (days >= 31) {
-        months++
-        days -= 31
-    }
-    if (months >= 12) {
-        years++
-        months -= 12
+    if (secondDays < firstDays) {
+        secondMonths -= 1
+        secondDays += daysInMonth(
+            secondMonths === 0 ? 12 : secondMonths,
+            secondMonths === 0 ? secondYears - 1 : secondYears
+        )
     }
 
-    return `${years}-${months}-${days}`
+    let days = secondDays - firstDays
+
+    if (secondMonths < firstMonths) {
+        secondYears -= 1
+        secondMonths += 12
+    }
+
+    let months = secondMonths - firstMonths
+    let years = secondYears - firstYears
+
+    return { years, months, days }
 }
 
-const calculateAge = (birthDate) => {
-    let currentDate = new Date
+const formatAge = ({ years, months, days }) =>
+    `${years} ${years !== 1 ? 'anos' : 'ano'}, ${months} ${months !== 1 ? 'meses' : 'mês'} e ${days} ${
+        days !== 1 ? 'dias' : 'dia'
+    }.`
 
-    return calculateDateDifference(birthDate, currentDate)
-}
+const pad = (n) => String(n).padStart(2, '0')
 
-const getAge = () => {
-    let dateInput = document.getElementById("input")
-    
-    let birthDate = new Date(`${dateInput.value}T00:00:00.000`)
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
 
-    let age = calculateAge(birthDate)
+    const birth = input.value
+    const birthDate = new Date(birth)
+    const currentDate = new Date()
+    const current = `${currentDate.getFullYear()}-${pad(currentDate.getMonth() + 1)}-${pad(currentDate.getDate())}`
 
-    let yearsOld = age.split("-")[0]
-    let monthsOld = age.split("-")[1]
-    let daysOld = age.split("-")[2]
+    const age =
+        birthDate > currentDate ? calculateDateDifference(current, birth) : calculateDateDifference(birth, current)
 
-    if (!isNaN(yearsOld) && !isNaN(monthsOld) && !isNaN(daysOld)) {
-        document.getElementById("result").innerHTML = `${yearsOld} ${yearsOld != 1 ? " anos, " : "ano, "} ${monthsOld} ${monthsOld != 1 ? " meses e " : " mês e "} ${daysOld} ${daysOld != 1 ? " dias." : " dia."}`
-        document.getElementById("result-area").style.display = "flex";
+    const resultElement = document.getElementById('result')
+    const resultArea = document.getElementById('result-area')
+
+    if (!isNaN(age.years) && !isNaN(age.months) && !isNaN(age.days)) {
+        resultElement.innerHTML = birthDate > currentDate ? `Faltam ${formatAge(age)}` : formatAge(age)
+        resultArea.style.display = 'flex'
     } else {
-        document.getElementById("result-area").style.display = "none";
+        resultElement.innerHTML = ''
+        resultArea.style.display = 'none'
     }
-}
+})
