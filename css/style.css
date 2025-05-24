@@ -17,7 +17,7 @@
 
 #main {
 	align-items: center;
-	background-color: var(--color-secondary-background);
+	background-color: var(--color-background);
 	display: flex;
 	justify-content: center;
 	min-height: 100vh;
@@ -25,7 +25,7 @@
 }
 
 #container {
-	background-color: var(--color-primary-background);
+	background-color: var(--color-surface);
 	border-radius: 0.5rem;
 	box-shadow: 0 4px 8px 0 var(--color-shadow);
 	gap: 1.5rem;
@@ -57,14 +57,14 @@
 	background-color: transparent;
 	border: 1px solid var(--color-border);
 	border-radius: 0.25rem;
-	outline-color: var(--color-highlight);
+	outline-color: var(--color-accent);
 }
 
 #button {
-	background-color: var(--color-highlight);
+	background-color: var(--color-accent);
 	border: none;
 	border-radius: 0.25rem;
-	color: var(--color-primary-background);
+	color: var(--color-surface);
 	cursor: pointer;
 	font-weight: bold;
 }
@@ -89,17 +89,17 @@
 #label,
 #input,
 #secondary-title {
-	color: var(--color-primary-text);
+	color: var(--color-text-primary);
 }
 
 #result {
-	color: var(--color-secondary-text);
+	color: var(--color-text-secondary);
 }
 
 @media screen and (max-width: 480px) {
 	#main {
 		align-items: unset;
-		background-color: var(--color-primary-background);
+		background-color: var(--color-surface);
 		padding: 0;
 	}
 
