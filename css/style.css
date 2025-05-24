@@ -1,112 +1,111 @@
 :root {
-    --color-border: #ccc;
-    --color-highlight: #0072e3;
-    --color-primary-background: #fff;
-    --color-primary-text: #000;
-    --color-secondary-background: #f9f9f9;
-    --color-secondary-text: #585858;
-    --color-shadow: #d9d9d9;
+	--color-border: #ccc;
+	--color-highlight: #0072e3;
+	--color-primary-background: #fff;
+	--color-primary-text: #000;
+	--color-secondary-background: #f9f9f9;
+	--color-secondary-text: #585858;
+	--color-shadow: #d9d9d9;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
 }
 
 #main {
-    align-items: center;
-    background-color: var(--color-secondary-background);
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 1.5rem;
+	align-items: center;
+	background-color: var(--color-secondary-background);
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 1.5rem;
 }
 
 #container {
-    background-color: var(--color-primary-background);
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px 0 var(--color-shadow);
-    gap: 1.5rem;
-    max-width: 24rem;
-    padding: 1.5rem;
-    width: 100%;
+	background-color: var(--color-primary-background);
+	border-radius: 0.5rem;
+	box-shadow: 0 4px 8px 0 var(--color-shadow);
+	gap: 1.5rem;
+	padding: 1.5rem;
+	width: min(100%, 24rem);
 }
 
 #primary-title {
-    font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 #form {
-    gap: 1rem;
+	gap: 1rem;
 }
 
 #label {
-    font-size: 1rem;
-    gap: 0.5rem;
+	font-size: 1rem;
+	gap: 0.5rem;
 }
 
 #container,
 #form,
 #label {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 #input {
-    background-color: transparent;
-    border: 1px solid var(--color-border);
-    border-radius: 0.25rem;
-    outline-color: var(--color-highlight);
+	background-color: transparent;
+	border: 1px solid var(--color-border);
+	border-radius: 0.25rem;
+	outline-color: var(--color-highlight);
 }
 
 #button {
-    background-color: var(--color-highlight);
-    border: none;
-    border-radius: 0.25rem;
-    color: var(--color-primary-background);
-    cursor: pointer;
-    font-weight: bold;
+	background-color: var(--color-highlight);
+	border: none;
+	border-radius: 0.25rem;
+	color: var(--color-primary-background);
+	cursor: pointer;
+	font-weight: bold;
 }
 
 #input,
 #button {
-    font-size: 0.875rem;
-    padding: 0.75rem;
+	font-size: 0.875rem;
+	padding: 0.75rem;
 }
 
 #result-area {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
+	display: none;
+	flex-direction: column;
+	gap: 1rem;
 }
 
 #secondary-title {
-    font-size: 1.25rem;
+	font-size: 1.25rem;
 }
 
 #primary-title,
 #label,
 #input,
 #secondary-title {
-    color: var(--color-primary-text);
+	color: var(--color-primary-text);
 }
 
 #result {
-    color: var(--color-secondary-text);
+	color: var(--color-secondary-text);
 }
 
 @media screen and (max-width: 480px) {
-    #main {
-        align-items: unset;
-        background-color: var(--color-primary-background);
-        padding: 0;
-    }
+	#main {
+		align-items: unset;
+		background-color: var(--color-primary-background);
+		padding: 0;
+	}
 
-    #container {
-        background-color: transparent;
-        border-radius: 0;
-        box-shadow: none;
-    }
+	#container {
+		background-color: transparent;
+		border-radius: 0;
+		box-shadow: none;
+	}
 }
