@@ -1,4 +1,5 @@
-import { calculateDateDifference, formatAge, pad } from './dateDifference.js'
+import { calculateDateDifference } from './dateDifference.js'
+import { formatAge, pad } from './format.js'
 
 const form = document.getElementById('form')
 const input = document.getElementById('input')
