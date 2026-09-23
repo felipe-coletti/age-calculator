@@ -3,6 +3,8 @@ import { formatAge, pad } from './format.js'
 
 const form = document.getElementById('form')
 const input = document.getElementById('input')
+const resultArea = document.getElementById('result-area')
+const resultElement = document.getElementById('result')
 
 form.addEventListener('submit', e => {
 	e.preventDefault()
@@ -14,14 +16,11 @@ form.addEventListener('submit', e => {
 
 	const age = birthDate > currentDate ? calculateDateDifference(current, birth) : calculateDateDifference(birth, current)
 
-	const resultElement = document.getElementById('result')
-	const resultArea = document.getElementById('result-area')
-
 	if (!isNaN(age.years) && !isNaN(age.months) && !isNaN(age.days)) {
-		resultElement.innerHTML = birthDate > currentDate ? `Faltam ${formatAge(age)}` : formatAge(age)
-		resultArea.style.display = 'flex'
+		resultElement.textContent = birthDate > currentDate ? `Faltam ${formatAge(age)}` : formatAge(age)
+		resultArea.hidden = false
 	} else {
-		resultElement.innerHTML = ''
-		resultArea.style.display = 'none'
+		resultElement.textContent = ''
+		resultArea.hidden = true
 	}
 })

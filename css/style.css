@@ -76,7 +76,6 @@
 }
 
 #result-area {
-	display: none;
 	flex-direction: column;
 	gap: 1rem;
 }

@@ -3,28 +3,55 @@ const isLeapYear = year => {
 }
 
 const daysInMonth = (month, year) => {
-	const daysPerMonth = [31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+	const daysPerMonth = [
+		31,
+		isLeapYear(year) ? 29 : 28,
+		31,
+		30,
+		31,
+		30,
+		31,
+		31,
+		30,
+		31,
+		30,
+		31,
+	]
+
 	return daysPerMonth[month - 1]
 }
 
 export const calculateDateDifference = (start, end) => {
-	let [firstYears, firstMonths, firstDays] = start.split('-').map(Number)
-	let [secondYears, secondMonths, secondDays] = end.split('-').map(Number)
+	const [startYear, startMonth, startDay] = start.split('-').map(Number)
+	const [endYear, endMonth, endDay] = end.split('-').map(Number)
 
-	if (secondDays < firstDays) {
-		secondMonths -= 1
-		secondDays += daysInMonth(secondMonths === 0 ? 12 : secondMonths, secondMonths === 0 ? secondYears - 1 : secondYears)
+	const startDate = new Date(startYear, startMonth - 1, startDay)
+	const endDate = new Date(endYear, endMonth - 1, endDay)
+
+	if (startDate > endDate) {
+		throw new Error('A data inicial deve ser anterior ou igual à data final.')
 	}
 
-	let days = secondDays - firstDays
+	let years = endYear - startYear
+	let months = endMonth - startMonth
+	let days = endDay - startDay
 
-	if (secondMonths < firstMonths) {
-		secondYears -= 1
-		secondMonths += 12
+	if (days < 0) {
+		months--
+
+		const previousMonth =
+			endMonth === 1 ? 12 : endMonth - 1
+
+		const previousMonthYear =
+			endMonth === 1 ? endYear - 1 : endYear
+
+		days += daysInMonth(previousMonth, previousMonthYear)
 	}
 
-	let months = secondMonths - firstMonths
-	let years = secondYears - firstYears
+	if (months < 0) {
+		years--
+		months += 12
+	}
 
 	return { years, months, days }
 }
